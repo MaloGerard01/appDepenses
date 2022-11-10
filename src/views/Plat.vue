@@ -64,7 +64,7 @@ export default {
       //console.log(platJSON)
       if(panier != [] && panier != undefined && panier != null)
       {
-       console.log(panier)
+       //console.log(panier)
         // panierArray.push(platTemp);
         // console.log(panierArray)
         //console.log(JSON.parse(plat));
