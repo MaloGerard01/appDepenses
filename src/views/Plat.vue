@@ -8,8 +8,9 @@
       <div class="px-6 py-4">
         <div class="font-bold text-xl mb-2">{{ plat.nom }}</div>
         <div class="font-bold text-l mb-2">{{ plat.type }}</div>
+        <div class="font-bold text-l mb-2">{{ plat.prix }} €</div>
         <p class="text-gray-700 text-base" v-for="(aliment, index) in plat.aliments">
-          {{ aliment.nom }}, 
+          {{ aliment.nom }}
         </p>
       </div>
       <div class='flex items-center justify-center'>
@@ -59,30 +60,24 @@ export default {
     },
 
     async addToPanier(plat) {
-      let panier = cookies.get('panier');
       let panierArray = []
-      //console.log(platJSON)
+      let panier = cookies.get('panier');
+      let panierJSON = ""
+
       if(panier != [] && panier != undefined && panier != null)
-      {
-        //Test 2
-       //console.log(panier)
-        // panierArray.push(platTemp);
-        // console.log(panierArray)
-        //console.log(JSON.parse(plat));
-        //panierArray.push(plat);
-        //console.log(panierArray);
-        //cookies.set("panier", panierArray , "20s");
-        
+      {        
+        let panierParsed = JSON.parse(panier);
+        panierParsed.push(plat)
+        panierJSON = JSON.stringify(panierParsed);
+        cookies.set("panier", panierJSON , "30min");
+        console.log(panierJSON)        
       }
       else
-      {
-        
+      {        
         panierArray.push(plat);
-        cookies.set("panier", panierArray , "20s");
+        panierJSON = JSON.stringify(panierArray);
+        cookies.set("panier", panierJSON , "30min");
       }
-      
-      // let test2 = JSON.parse(test);
-      // console.log("After parse : " + test2[0].nom);
     },
   },
 

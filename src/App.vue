@@ -51,8 +51,9 @@
           md:flex md:space-y-0 md:flex-row md:items-center md:space-x-10 md:mt-0
         "
       >
-        <li class="text-gray-100 hover:text-indigo-400"><router-link to="/menus">Menus</router-link></li>
+        
         <li class="text-gray-100 hover:text-indigo-400"><router-link to="/plats">Plats</router-link></li>
+        <li class="text-gray-100 hover:text-indigo-400"><router-link to="/panier">Panier</router-link></li>
         <li class="text-gray-100 hover:text-indigo-400"><router-link to="/admin">Admin</router-link></li>
         <li v-if="isAdmin" class="text-gray-100 hover:text-indigo-400"><router-link to="/adminplat">Modifier Plats</router-link></li>
         <li v-if="isAdmin" class="text-gray-100 hover:text-indigo-400"><router-link to="/adminplatajout">Ajouter Plat</router-link></li>
