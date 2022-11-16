@@ -30,12 +30,18 @@
 
 
     </div>
+    <div class='flex items-center justify-center'>
+        <button class="w-96 m-2 p-2 text-center text-black text-base border-2 border-green-500" @click="achatPanier()" type="button">
+                    Passer commande
+        </button>
+      </div>
   </div>
 </template>
 
 <script>
 // @ is an alias to /src
 // import HelloWorld from '@/components/HelloWorld.vue'
+var RESTAURATION_API = "http://localhost:3000/";
 import { useCookies } from "vue3-cookies";
 const { cookies } = useCookies();
 
@@ -69,6 +75,28 @@ export default {
       console.log(panierJSON)
       cookies.set("panier", panierJSON , "30min");      
       this.getPanier();
+    },
+
+    async achatPanier() {
+      
+      let panierJSON = JSON.stringify(this.plats);
+      console.log(panierJSON);
+    },
+
+    async achatPanier() {
+
+      let panierJSON = JSON.stringify(this.plats);
+      console.log(panierJSON)
+      const settings = { method: "POST", 
+                mode: 'cors',
+                headers: {'Accept': 'application/json','Content-Type': 'application/json'},
+                body: panierJSON,
+            };
+            console.log(settings)
+      const response = await fetch(RESTAURATION_API + "achatPlats", settings);
+
+      let reponse = await response.json();
+      console.log(reponse);
     },
   },
 

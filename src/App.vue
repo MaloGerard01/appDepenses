@@ -57,6 +57,8 @@
         <li class="text-gray-100 hover:text-indigo-400"><router-link to="/admin">Admin</router-link></li>
         <li v-if="isAdmin" class="text-gray-100 hover:text-indigo-400"><router-link to="/adminplat">Modifier Plats</router-link></li>
         <li v-if="isAdmin" class="text-gray-100 hover:text-indigo-400"><router-link to="/adminplatajout">Ajouter Plat</router-link></li>
+        <li v-if="isAdmin" class="text-gray-100 hover:text-indigo-400"><router-link to="/adminaliment">Modifier Aliments</router-link></li>
+        <li v-if="isAdmin" class="text-gray-100 hover:text-indigo-400"><router-link to="/adminalimentajout">Ajouter Aliment</router-link></li>
         <li v-if="isAdmin" @click="disconnectAdmin()" class="text-gray-100 hover:text-indigo-400"><router-link to="/plats">Déconnexion</router-link></li>
       </ul>
     </nav>

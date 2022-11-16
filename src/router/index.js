@@ -7,6 +7,8 @@ import Admin from '../views/Admin.vue'
 import AdminPlat from '../views/AdminPlat.vue'
 import AdminPlatModif from '../views/AdminPlatModif.vue'
 import AdminPlatAjout from '../views/AdminPlatAjout.vue'
+import AdminAliment from '../views/AdminAliment.vue'
+import AdminAlimentAjout from '../views/AdminAlimentAjout.vue'
 
 import { useCookies } from "vue3-cookies";
 const { cookies } = useCookies();
@@ -68,6 +70,30 @@ const routes = [
     path: '/adminplatajout',
     name: 'AdminPlatAjout',
     component: AdminPlatAjout,
+    beforeEnter: (to, from) => {
+      console.log(cookies.get('tokenJWT'));
+      if(cookies.get("tokenJWT") == null || cookies.get("tokenJWT") == undefined || cookies.get("tokenJWT") == "undefined")
+      {
+        return { name: 'Home' }
+      }      
+    },
+  },
+  {
+    path: '/adminaliment',
+    name: 'AdminAliment',
+    component: AdminAliment,
+    beforeEnter: (to, from) => {
+      console.log(cookies.get('tokenJWT'));
+      if(cookies.get("tokenJWT") == null || cookies.get("tokenJWT") == undefined || cookies.get("tokenJWT") == "undefined")
+      {
+        return { name: 'Home' }
+      }      
+    },
+  },
+  {
+    path: '/adminalimentajout',
+    name: 'AdminAlimentAjout',
+    component: AdminAlimentAjout,
     beforeEnter: (to, from) => {
       console.log(cookies.get('tokenJWT'));
       if(cookies.get("tokenJWT") == null || cookies.get("tokenJWT") == undefined || cookies.get("tokenJWT") == "undefined")

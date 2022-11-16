@@ -94,10 +94,3 @@ methods: {
   },
 };
 </script>
-
-<style scoped>
-.border {
-    border-width: 5px;
-    color: black;
-  }
-</style>
