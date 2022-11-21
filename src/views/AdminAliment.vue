@@ -17,7 +17,13 @@
             </div>
         <div class='flex items-center justify-center'>
         <button class="w-full m-2 p-2 text-center text-black text-base border-2 border-yellow-500" @click="modifStockAliment(index, aliment._id)" type="button">
-                    Modifier quantité
+                    Modifier la quantité
+        </button>
+      </div>
+
+      <div class='flex items-center justify-center'>
+        <button class="w-full m-2 p-2 text-center text-black text-base border-2 border-red-500" @click="supprimerAliment(aliment._id)" type="button">
+                    Supprimer
         </button>
       </div>
       </div>
@@ -83,6 +89,30 @@ methods: {
       else
       {
         console.log("Update cancelled")
+      }
+
+
+    },
+
+    async supprimerAliment(idaliment) {
+      console.log(idaliment)
+      if(confirm("Do you really want to delete ?"))
+      {
+        let tokenJWT = cookies.get('tokenJWT');
+        const settings = { method: "POST", 
+                mode: 'cors',
+                headers: {'Authorization': 'Basic ' + tokenJWT,'Accept': 'application/json','Content-Type': 'application/json'},
+            };
+        console.log(settings)
+        const response = await fetch(RESTAURATION_API + "deleteAliment/" + idaliment, settings);
+
+        let reponse = await response.json();
+        console.log(reponse);
+        this.getAliments();
+      }
+      else
+      {
+        console.log("Delete cancelled")
       }
 
 

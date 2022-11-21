@@ -9,7 +9,7 @@
         <div class="font-bold text-xl mb-2">{{ plat.nom }}</div>
         <div class="font-bold text-l mb-2">{{ plat.type }}</div>
         <p class="text-gray-700 text-base" v-for="(aliment, index) in plat.aliments">
-          {{ aliment.nom }}, 
+          {{ aliment.nom }} 
         </p>
         <router-link :to="{ path: '/adminplatModif/' + plat._id }">
                 <h3 class="m-2 p-2 text-center text-black text-base border-2 border-yellow-500">
