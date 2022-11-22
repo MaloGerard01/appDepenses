@@ -1,4 +1,5 @@
 <template>
+  <navbar/>
 <form class="grid content-center	 w-1/2" @submit.prevent="submitForm">
   <div class="mb-6">
     <label for="email" class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">Email</label>
@@ -22,11 +23,12 @@
 var RESTAURATION_API = "http://localhost:3000/login";
 import { useCookies } from "vue3-cookies";
 const { cookies } = useCookies();
+import navbar from '@/components/navbar.vue'
 
 export default {
   name: 'Admin',
   components: {
-    //HelloWorld
+    navbar
   },
   data() {
     return {

@@ -1,4 +1,5 @@
 <template>
+<navbar/>
   <form class="m-auto w-full" method="POST" @submit.prevent="modifPlat">
     <h1 class="italic text-4xl m-10 text-center">{{ plat.nom }}</h1>
     <div class="rounded overflow-hidden shadow-lg">
@@ -91,11 +92,12 @@ var RESTAURATION_API = "http://localhost:3000/";
 import { useRoute } from "vue-router";
 import { useCookies } from "vue3-cookies";
 const { cookies } = useCookies();
+import navbar from '@/components/navbar.vue'
 
 export default {
   name: "AdminPlatModif",
   components: {
-    //HelloWorld
+    navbar
   },
   data() {
     return {

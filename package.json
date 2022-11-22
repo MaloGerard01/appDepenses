@@ -6,7 +6,7 @@
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
     "lint": "vue-cli-service lint",
-    "watch": "vue-cli-service serve --watch"
+    "watch": "vue-cli-service serve --watch --port 8081"
   },
   "dependencies": {
     "autoprefixer": "^9.8.8",

@@ -1,5 +1,6 @@
 
 <template>
+<navbar/>
 <div class="plat">
   <h1 class="italic text-4xl m-10 text-center">Plats</h1>
   <select v-model="selectedCategory">
@@ -44,11 +45,12 @@
 var RESTAURATION_API = "http://localhost:3000";
 import { useCookies } from "vue3-cookies";
 const { cookies } = useCookies();
+import navbar from '@/components/navbar.vue'
 
 export default {
   name: "Home",
   components: {
-    //HelloWorld
+    navbar
   },
   data() {
     return {

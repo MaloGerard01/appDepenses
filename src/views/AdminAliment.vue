@@ -1,4 +1,5 @@
 <template>
+  <navbar/>
   <div class="aliment">
     <h1 class="italic text-4xl m-10 text-center">Panel Admin Aliments</h1>
     <div class="p-10 grid grid-cols-1 sm:grid-cols-1 md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-3 gap-5">
@@ -43,11 +44,12 @@
 var RESTAURATION_API = "http://localhost:3000/";
 import { useCookies } from "vue3-cookies";
 const { cookies } = useCookies();
+import navbar from '@/components/navbar.vue'
 
 export default {
   name: "AdminAliment",
   components: {
-    //HelloWorld
+    navbar
   },
   data() {
     return {

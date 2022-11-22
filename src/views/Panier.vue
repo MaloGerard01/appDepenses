@@ -1,4 +1,5 @@
 <template>
+<navbar/>
   <div class="plat">
     <h1 class="italic text-4xl m-10 text-center">Panier</h1>
     <h2 class="italic text-4xl m-10 text-center">Total : {{total}} €</h2>
@@ -44,11 +45,12 @@
 var RESTAURATION_API = "http://localhost:3000/";
 import { useCookies } from "vue3-cookies";
 const { cookies } = useCookies();
+import navbar from '@/components/navbar.vue'
 
 export default {
   name: "Panier",
   components: {
-    //HelloWorld
+    navbar
   },
   data() {
     return {

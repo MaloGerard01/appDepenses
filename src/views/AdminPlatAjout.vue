@@ -1,4 +1,5 @@
 <template>
+<navbar/>
   <form class="m-auto w-full" method="POST" @submit.prevent="ajoutPlat">
     <div class="rounded overflow-hidden shadow-lg">
       <img class="w-80" src="../assets/hamburger-0.jpg" alt="">
@@ -101,11 +102,12 @@ var RESTAURATION_API = "http://localhost:3000/";
 import { useRoute } from "vue-router";
 import { useCookies } from "vue3-cookies";
 const { cookies } = useCookies();
+import navbar from '@/components/navbar.vue'
 
 export default {
   name: "AdminPlatAjout",
   components: {
-    //HelloWorld
+    navbar
   },
   data() {
     return {
