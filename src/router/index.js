@@ -19,7 +19,7 @@ const routes = [
   {
     path: '/',
     name: 'Home',
-    component: Home
+    component: Plat
   },
   {
     path: '/menus',
@@ -27,11 +27,11 @@ const routes = [
     component: Menu
   },
 
-  {
-    path: '/plats',
-    name: 'Plats',
-    component: Plat
-  },
+  // {
+  //   path: '/plats',
+  //   name: 'Plats',
+  //   component: Plat
+  // },
   {
     path: '/panier',
     name: 'Panier',

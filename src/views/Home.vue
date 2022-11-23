@@ -2,8 +2,6 @@
   <navbar/>
   <div class="home">
     <h1>Restauration</h1>
-    
-    <!-- <HelloWorld msg="Welcome to Your Vue.js App"/> -->
   </div>
 </template>
 

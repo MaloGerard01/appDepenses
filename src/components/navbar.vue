@@ -1,5 +1,5 @@
 <template>
-    <div class="bg-indigo-600">
+    <div class="bg-black">
       <nav
         class="
           container
@@ -19,7 +19,7 @@
               md:text-2xl
               hover:text-indigo-400
             "
-            >Logo
+            >Restauration
           </router-link>
           <!-- Mobile menu button -->
           <div @click="toggleNav" class="flex md:hidden">
@@ -52,14 +52,14 @@
           "
         >
           
-          <li class="text-gray-100 hover:text-indigo-400"><router-link to="/plats">Plats</router-link></li>
+          <li class="text-gray-100 hover:text-indigo-400"><router-link to="/">Plats</router-link></li>
           <li class="text-gray-100 hover:text-indigo-400"><router-link to="/panier">Panier</router-link></li>
           <li class="text-gray-100 hover:text-indigo-400"><router-link to="/admin">Admin</router-link></li>
           <li v-if="isAdmin" class="text-gray-100 hover:text-indigo-400"><router-link to="/adminplat">Modifier Plats</router-link></li>
           <li v-if="isAdmin" class="text-gray-100 hover:text-indigo-400"><router-link to="/adminplatajout">Ajouter Plat</router-link></li>
           <li v-if="isAdmin" class="text-gray-100 hover:text-indigo-400"><router-link to="/adminaliment">Modifier Aliments</router-link></li>
           <li v-if="isAdmin" class="text-gray-100 hover:text-indigo-400"><router-link to="/adminalimentajout">Ajouter Aliment</router-link></li>
-          <li v-if="isAdmin" @click="disconnectAdmin()" class="text-gray-100 hover:text-indigo-400"><router-link to="/plats">Déconnexion</router-link></li>
+          <li v-if="isAdmin" @click="disconnectAdmin()" class="text-gray-100 hover:text-indigo-400"><router-link to="/">Déconnexion</router-link></li>
         </ul>
       </nav>
     </div>
