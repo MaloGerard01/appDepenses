@@ -81,7 +81,6 @@ export default {
   methods: {
     async getPanier() {
       let panier = cookies.get("panier");
-      console.log(panier);
       if (
         panier != [] &&
         panier != undefined &&
@@ -95,17 +94,14 @@ export default {
     },
 
     async removeFromPanier(idPlat) {
-      console.log(idPlat);
       this.plats.splice(idPlat, 1);
       let panierJSON = JSON.stringify(this.plats);
-      console.log(panierJSON);
       cookies.set("panier", panierJSON, "30min");
       this.getPanier();
     },
 
     async achatPanier() {
       let panierJSON = JSON.stringify(this.plats);
-      console.log(panierJSON);
       const settings = {
         method: "POST",
         mode: "cors",
@@ -115,9 +111,7 @@ export default {
         },
         body: panierJSON,
       };
-      console.log(settings);
       const response = await fetch(RESTAURATION_API + "achatPlats", settings);
-      console.log(response);
       this.openModal = true;
       var self = this;
 

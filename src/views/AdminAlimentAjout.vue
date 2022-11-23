@@ -84,29 +84,16 @@ export default {
   },
 
   methods: {
-    // async getAliments() {
-    //   //const settings = { method: "GET"}
-    //   // const settings = { method: "POST",
-    //   //           headers: { Accept: "application/json", "Content-Type": "application/json",},
-    //   //       };
-    //   const response = await fetch(RESTAURATION_API + "aliments/");
-
-    //   this.aliments = await response.json();
-    //   console.log(this.aliments);
-    // },
 
     async ajoutAliment() {
-      console.log(this.aliment);
       if (
         this.aliment.nom != "" &&
         this.aliment.type != "" &&
         this.aliment.stock != 0
       ) {
         let tokenJWT = cookies.get("tokenJWT");
-        console.log(tokenJWT);
 
         let alimentData = JSON.stringify(this.aliment);
-        console.log(alimentData);
         const settings = {
           method: "POST",
           mode: "cors",
@@ -117,14 +104,12 @@ export default {
           },
           body: alimentData,
         };
-        console.log(settings);
         const response = await fetch(
           RESTAURATION_API + "insertAliment",
           settings
         );
 
         let reponse = await response.json();
-        console.log(reponse);
         this.showMessage = false;
         this.message = "L'aliment a été ajouté a la base"
       } else {
@@ -133,39 +118,6 @@ export default {
       }
     },
 
-    // deleteAliment(idAliment) {
-
-    //    console.log(this.aliment.aliments[idAliment])
-    //    this.aliment.aliments.splice(idAliment,1);
-
-    // },
-
-    // addAliment() {
-    //   console.log(this.nvAliment);
-    //   if(this.nvAliment.nom != "" && this.nvAliment.quantite != 0 && this.nvAliment.quantite != null)
-    //   {
-    //     let newAliment = {nom :"", quantite :"",_id: ""};
-    //     this.showMessage = false;
-    //     newAliment._id = this.nvAliment._id;
-    //     newAliment.nom = this.nvAliment.nom;
-    //     newAliment.quantite = this.nvAliment.quantite;
-    //     console.log(newAliment);
-    //     this.aliment.aliments.push(newAliment);
-    //     //this.nvAliment.nom = "";
-    //     //this.nvAliment.quantite = 0;
-    //     console.log(this.aliment.aliments)
-    //   }
-    //   else
-    //   {
-    //     console.log("incorrect")
-    //     this.showMessage = true;
-    //     this.message = "Valeurs incorrectes";
-    //   }
-    // },
   },
-
-  // async mounted() {
-  //   this.getAliments();
-  // },
 };
 </script>

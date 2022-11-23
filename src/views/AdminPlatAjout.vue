@@ -156,17 +156,13 @@ export default {
       const response = await fetch(RESTAURATION_API + "aliments/");
 
       this.aliments = await response.json();
-      console.log(this.aliments);
     },
 
     async ajoutPlat() {
-      console.log(this.plat);
 
       let tokenJWT = cookies.get("tokenJWT");
-      console.log(tokenJWT);
 
       let platData = JSON.stringify(this.plat);
-      console.log(platData);
       const settings = {
         method: "POST",
         mode: "cors",
@@ -177,9 +173,7 @@ export default {
         },
         body: platData,
       };
-      console.log(settings);
       const response = await fetch(RESTAURATION_API + "insertPlat", settings);
-      console.log(response)
       if(response.status == 201)
       {
         this.showMessage = true;
@@ -192,18 +186,15 @@ export default {
       }
 
       let reponse = await response.json();
-      console.log(reponse);
 
 
     },
 
     deleteAliment(idAliment) {
-      console.log(this.plat.aliments[idAliment]);
       this.plat.aliments.splice(idAliment, 1);
     },
 
     addAliment() {
-      console.log(this.nvAliment);
       if (
         this.nvAliment.nom != "" &&
         this.nvAliment.quantite != 0 &&
@@ -214,11 +205,8 @@ export default {
         newAliment._id = this.nvAliment._id;
         newAliment.nom = this.nvAliment.nom;
         newAliment.quantite = this.nvAliment.quantite;
-        console.log(newAliment);
         this.plat.aliments.push(newAliment);
-        console.log(this.plat.aliments);
       } else {
-        console.log("incorrect");
         this.showMessage = true;
         this.message = "Valeurs incorrectes";
       }

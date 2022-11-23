@@ -82,7 +82,6 @@ export default {
         headers: { "Content-Type": "application/json" },
         body: formData,
       };
-      console.log(settings);
       const response = await fetch(RESTAURATION_API, settings);
 
       this.loginResponse = await response.json();

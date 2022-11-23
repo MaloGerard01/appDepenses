@@ -87,15 +87,12 @@ export default {
       const response = await fetch(RESTAURATION_API + "aliments/");
 
       this.aliments = await response.json();
-      console.log(this.aliments);
     },
 
     async modifStockAliment(index, idaliment) {
-      console.log(idaliment);
       if (confirm("Êtes-vous sur de mettre a jour l'aliment ?")) {
         let alimentData = JSON.stringify(this.aliments[index]);
         let tokenJWT = cookies.get("tokenJWT");
-        console.log(tokenJWT);
         const settings = {
           method: "POST",
           mode: "cors",
@@ -106,22 +103,18 @@ export default {
           },
           body: alimentData,
         };
-        console.log(settings);
         const response = await fetch(
           RESTAURATION_API + "updateAliment/" + idaliment,
           settings
         );
 
         let reponse = await response.json();
-        console.log(reponse);
         this.getAliments();
       } else {
-        console.log("Update cancelled");
       }
     },
 
     async supprimerAliment(idaliment) {
-      console.log(idaliment);
       if (confirm("Êtes-vous sur de supprimer l'aliment ?")) {
         let tokenJWT = cookies.get("tokenJWT");
         const settings = {
@@ -133,17 +126,14 @@ export default {
             "Content-Type": "application/json",
           },
         };
-        console.log(settings);
         const response = await fetch(
           RESTAURATION_API + "deleteAliment/" + idaliment,
           settings
         );
 
         let reponse = await response.json();
-        console.log(reponse);
         this.getAliments();
       } else {
-        console.log("Delete cancelled");
       }
     },
   },

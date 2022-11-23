@@ -67,15 +67,12 @@ export default {
       const response = await fetch(RESTAURATION_API + "plats/");
 
       this.plats = await response.json();
-      console.log(this.plats);
     },
 
     async deletePlat(idPlat) {
-      console.log(idPlat);
 
       if (confirm("Êtes-vous sur de supprimer le plat ?")) {
         let tokenJWT = cookies.get("tokenJWT");
-        console.log(tokenJWT);
         const settings = {
           method: "POST",
           mode: "cors",
@@ -85,14 +82,12 @@ export default {
             "Content-Type": "application/json",
           },
         };
-        console.log(settings);
         const response = await fetch(
           RESTAURATION_API + "deletePlat/" + idPlat,
           settings
         );
 
         let reponse = await response.json();
-        console.log(reponse);
         this.getPlats();
       } else {
         console.log("Deletion cancelled");

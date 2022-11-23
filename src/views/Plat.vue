@@ -92,12 +92,10 @@ export default {
       this.plats = await response.json();
       this.plats.forEach(async (plat) => {
         plat.aliments.forEach(async (aliment) => {
-          console.log(aliment._id);
           const response = await fetch(
             RESTAURATION_API + "/getAliment/" + aliment._id
           );
           let alimentData = await response.json();
-          console.log(alimentData);
           if (alimentData != null || alimentData != undefined) {
             if (alimentData.stock <= 0) {
               plat.disponible = false;
@@ -129,7 +127,6 @@ export default {
           panierParsed.push(plat);
           panierJSON = JSON.stringify(panierParsed);
           cookies.set("panier", panierJSON, "30min");
-          console.log(panierJSON);
         } else {
           panierArray.push(plat);
           panierJSON = JSON.stringify(panierArray);
