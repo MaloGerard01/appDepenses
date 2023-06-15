@@ -1,5 +1,5 @@
 <template>
-    <div class="bg-black">
+    <div class="bg-blue-500">
       <nav
         class="
           container
@@ -17,9 +17,9 @@
               font-bold
               text-gray-100
               md:text-2xl
-              hover:text-indigo-400
+              hover:text-black
             "
-            >Restauration
+            >Gestion des depenses
           </router-link>
           <!-- Mobile menu button -->
           <div @click="toggleNav" class="flex md:hidden">
@@ -52,14 +52,12 @@
           "
         >
           
-          <li class="text-gray-100 hover:text-indigo-400"><router-link to="/">Plats</router-link></li>
-          <li class="text-gray-100 hover:text-indigo-400"><router-link to="/panier">Panier</router-link></li>
-          <li class="text-gray-100 hover:text-indigo-400"><router-link to="/admin">Admin</router-link></li>
-          <li v-if="isAdmin" class="text-gray-100 hover:text-indigo-400"><router-link to="/adminplat">Modifier Plats</router-link></li>
-          <li v-if="isAdmin" class="text-gray-100 hover:text-indigo-400"><router-link to="/adminplatajout">Ajouter Plat</router-link></li>
-          <li v-if="isAdmin" class="text-gray-100 hover:text-indigo-400"><router-link to="/adminaliment">Modifier Aliments</router-link></li>
-          <li v-if="isAdmin" class="text-gray-100 hover:text-indigo-400"><router-link to="/adminalimentajout">Ajouter Aliment</router-link></li>
-          <li v-if="isAdmin" @click="disconnectAdmin()" class="text-gray-100 hover:text-indigo-400"><router-link to="/">Déconnexion</router-link></li>
+          <li class="text-gray-100 hover:text-black"><router-link to="/">Dépenses</router-link></li>
+          <li class="text-gray-100 hover:text-black"><router-link to="/equilibres">Equilibres</router-link></li>
+          <li class="text-gray-100 hover:text-black"><router-link to="/utilisateurs">Utilisateurs</router-link></li>
+          <li class="text-gray-100 hover:text-black"><router-link to="/categories">Catégories</router-link></li>
+          <li v-if="!isAdmin" class="text-gray-100 hover:text-black"><router-link to="/connexion">Se connecter</router-link></li>
+          <li v-if="isAdmin" @click="disconnectAdmin()" class="text-gray-100 hover:text-black"><router-link to="/">Déconnexion</router-link></li>
         </ul>
       </nav>
     </div>
@@ -86,7 +84,6 @@ export default {
   methods: {
     checkIsAdmin() {
       let tokenJWT = cookies.get('tokenJWT');
-      console.log(tokenJWT);
       if(tokenJWT != undefined && tokenJWT != null && tokenJWT != "undefined")
       {
         this.isAdmin = true;
@@ -95,7 +92,6 @@ export default {
       {
         this.isAdmin = false;
       }
-      console.log(this.isAdmin);
     },
 
     disconnectAdmin() {

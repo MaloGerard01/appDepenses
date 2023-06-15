@@ -50,13 +50,13 @@
 </template>
 
 <script>
-var RESTAURATION_API = "http://localhost:3000/login";
+var GESTIONDEPENSE_API = "http://localhost:3000/login";
 import { useCookies } from "vue3-cookies";
 const { cookies } = useCookies();
 import navbar from "@/components/navbar.vue";
 
 export default {
-  name: "Admin",
+  name: "Connexion",
   components: {
     navbar,
   },
@@ -82,7 +82,7 @@ export default {
         headers: { "Content-Type": "application/json" },
         body: formData,
       };
-      const response = await fetch(RESTAURATION_API, settings);
+      const response = await fetch(GESTIONDEPENSE_API, settings);
 
       this.loginResponse = await response.json();
       if (this.loginResponse.error == "User not found!") {
@@ -94,7 +94,7 @@ export default {
       } else {
         cookies.set("tokenJWT", this.loginResponse.token, "24h");
         this.showMessage = false;
-        this.$router.push("/adminplat");
+        this.$router.push("/");
       }
     },
   },
