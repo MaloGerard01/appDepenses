@@ -104,14 +104,6 @@ export default {
   components: {
     navbar,
   },
-  watch: {
-    depense: {
-      handler(val, oldVal) {
-        console.log("test")
-        this.calculParts();
-      },
-    }
-  },
   data() {
     return {
       idDepense: null,
