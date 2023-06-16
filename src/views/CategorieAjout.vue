@@ -8,12 +8,8 @@
             <p>Libellé de la catégorie</p>
             <input
               class="h-12 w-56 appearance-none block bg-gray-200 text-gray-700 border border-gray-500 rounded py-2 px-4 leading-tight focus:outline-none focus:bg-gray-300"
-              v-model="categorieDepense.libelle" />
-
+              v-model="categorieDepense.libelle" required/>
           </div>
-
-
-
         </div>
         <div class="relative z-0 mb-3 mt-3 w-full group" v-if="showMessage">
           <p

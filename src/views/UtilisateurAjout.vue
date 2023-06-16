@@ -8,7 +8,7 @@
             <p>Nom</p>
             <input
               class="h-12 w-56 appearance-none block bg-gray-200 text-gray-700 border border-gray-500 rounded py-2 px-4 leading-tight focus:outline-none focus:bg-gray-300"
-              v-model="user.nom" />
+              v-model="user.nom" required/>
 
           </div>
 
@@ -18,21 +18,21 @@
           <p>Prénom</p>
           <input
             class="h-12 w-56 appearance-none block bg-gray-200 text-gray-700 border border-gray-500 rounded py-2 px-4 leading-tight focus:outline-none focus:bg-gray-300"
-            v-model="user.prenom" />
+            v-model="user.prenom" required/>
         </div>
 
         <div class="relative z-0 mb-3 w-full group">
           <p>Adresse mail</p>
           <input
             class="h-12 w-56 appearance-none block bg-gray-200 text-gray-700 border border-gray-500 rounded py-2 px-4 leading-tight focus:outline-none focus:bg-gray-300"
-            v-model="user.email" />
+            v-model="user.email" required/>
         </div>
 
         <div class="relative z-0 mb-3 w-full group">
           <p>Mot de passe</p>
           <input
             class="h-12 w-56 appearance-none block bg-gray-200 text-gray-700 border border-gray-500 rounded py-2 px-4 leading-tight focus:outline-none focus:bg-gray-300"
-            type="password" v-model="user.mdp" />
+            type="password" v-model="user.mdp" required/>
         </div>
 
         <div class="relative z-0 mb-3  mt-3 w-full group" v-if="showMessage">

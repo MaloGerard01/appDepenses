@@ -8,13 +8,13 @@
             <p>Nom de la dépense</p>
             <input
               class="h-12 w-56 appearance-none block bg-gray-200 text-gray-700 border border-gray-500 rounded py-2 px-4 leading-tight focus:outline-none focus:bg-gray-300"
-              v-model="depense.libelle" id="infos" />
+              v-model="depense.libelle" id="infos" required/>
           </div>
           <div class="relative z-0 mb-3 w-full group">
             <p>Catégorie</p>
             <select
               class="h-12 w-56 appearance-none block bg-gray-200 text-gray-700 border border-gray-500 rounded py-2 px-4 leading-tight focus:outline-none focus:bg-gray-300"
-              v-model="depense.categorie">
+              v-model="depense.categorie" required>
               <option v-bind:key="categorieDepense" v-for="categorieDepense in categoriesDepense"
                 :value="categorieDepense._id">
                 {{ getCategorieById(categorieDepense._id).libelle }}
@@ -68,7 +68,7 @@
         <h2 class="m-3">Total (€)</h2>
         <input
           class="h-12 appearance-none block w-50 bg-gray-200 text-gray-700 border border-gray-500 rounded py-2 px-4 leading-tight focus:outline-none focus:bg-gray-300"
-          type="number" v-model="depense.total" id="infos" @input="calculParts()" />
+          type="number" v-model="depense.total" id="infos" @input="calculParts()" required />
         <div class="relative z-0 mb-3  mt-3 w-full group" v-if="showMessage">
           <p
             class="bg-red-200 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
@@ -205,6 +205,7 @@ export default {
         );
 
         let reponse = await response.json();
+        this.$router.push("/");
       } else {
         console.log("Deletion cancelled");
       }

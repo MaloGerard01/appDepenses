@@ -8,7 +8,7 @@
             <p>Nom de la dépense</p>
             <input
               class="h-12 w-56 appearance-none block bg-gray-200 text-gray-700 border border-gray-500 rounded py-2 px-4 leading-tight focus:outline-none focus:bg-gray-300"
-              v-model="categorieDepense.libelle" id="infos" />
+              v-model="categorieDepense.libelle" id="infos" required />
           </div>
         </div>
 
@@ -119,6 +119,7 @@ export default {
         );
 
         let reponse = await response.json();
+        this.$router.push("/");
       } else {
         console.log("Deletion cancelled");
       }
