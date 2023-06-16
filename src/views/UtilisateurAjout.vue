@@ -61,7 +61,7 @@ import { useRoute } from "vue-router";
 import navbar from "@/components/navbar.vue";
 
 export default {
-  name: "DepenseAjout",
+  name: "UtilisateurAjout",
   components: {
     navbar,
   },

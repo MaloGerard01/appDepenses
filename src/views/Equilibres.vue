@@ -36,7 +36,7 @@ const { cookies } = useCookies();
 import navbar from "@/components/navbar.vue";
 
 export default {
-  name: "Home",
+  name: "Equilibres",
   components: {
     navbar,
   },

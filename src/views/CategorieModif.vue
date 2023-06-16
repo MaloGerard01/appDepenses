@@ -43,7 +43,7 @@ const { cookies } = useCookies();
 import navbar from "@/components/navbar.vue";
 
 export default {
-  name: "AdminPlatModif",
+  name: "CategorieModif",
   components: {
     navbar,
   },
@@ -103,7 +103,7 @@ export default {
 
     async deleteCategorieDepense() {
 
-      if (confirm("Êtes-vous sur de supprimer la dépense ?")) {
+      if (confirm("Êtes-vous sur de supprimer la catégorie ?")) {
         const settings = {
           method: "DELETE",
           mode: "cors",

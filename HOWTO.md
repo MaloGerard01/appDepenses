@@ -5,3 +5,5 @@ L'application appDepenses permet de consulter les dépenses de la collocation et
 Afin d'ajouter de nouvelles dépenses ou catégories et les modifier, il est nécessaire de se créer un compte sur la page Utilisateurs et ensuite se connecter.
 
 Lors de la création d'une nouvelle dépense, il est obligatoire de lui donner une catégorie, au moins un utilisateur concerné par celle-ci et le montant de la dépense.
+
+On peut consulter les montants du depuis la page Équilibres.

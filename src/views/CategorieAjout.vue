@@ -39,7 +39,7 @@ const { cookies } = useCookies();
 import navbar from "@/components/navbar.vue";
 
 export default {
-  name: "DepenseAjout",
+  name: "CategorieAjout",
   components: {
     navbar,
   },

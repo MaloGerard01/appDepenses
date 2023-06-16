@@ -37,16 +37,14 @@ const { cookies } = useCookies();
 import navbar from "@/components/navbar.vue";
 
 export default {
-  name: "Home",
+  name: "Utilisateurs",
   components: {
     navbar,
   },
   data() {
     return {
-      depenses: {},
       users: {},
       connected: false,
-      nomDepenseAjoute: "",
     };
   },
 
