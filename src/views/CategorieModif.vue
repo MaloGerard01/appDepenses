@@ -5,7 +5,7 @@
       <div class="px-6 py-4">
         <div class="grid md:grid-cols-3 md:gap-6">
           <div class="relative z-0 mb-3 w-full group">
-            <p>Nom de la dépense</p>
+            <p>Nom de la catégorie</p>
             <input
               class="h-12 w-56 appearance-none block bg-gray-200 text-gray-700 border border-gray-500 rounded py-2 px-4 leading-tight focus:outline-none focus:bg-gray-300"
               v-model="categorieDepense.libelle" id="infos" required />
@@ -27,7 +27,7 @@
           <button
             class="w-1/2 m-2 p-2 text-center text-white bg-red-500 hover:bg-red-800 focus:ring-4 focus:outline-none focus:ring-red-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-800"
             :disabled="button" @click="deleteCategorieDepense()">
-            Supprimer la dépense
+            Supprimer la catégorie
           </button>
         </div>
       </div>
